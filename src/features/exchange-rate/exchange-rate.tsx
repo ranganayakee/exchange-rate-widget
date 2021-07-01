@@ -23,7 +23,6 @@ export const  ExchangeRateFeature : FC = () => {
   const [targetAmount, setTargetAmount] = useState<number>(0);
 
   const onAmountChange = (event :  React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
     setAmount( Number(event.target.value));
   }
 
@@ -36,8 +35,7 @@ export const  ExchangeRateFeature : FC = () => {
   };
 
    useEffect(() => {
-      console.log(targetCurrency , amount);
-        targetCurrency && setTargetAmount( amount * targetCurrency.conversionRate);
+    targetCurrency && setTargetAmount( amount * targetCurrency.conversionRate);
    }, [amount, targetCurrency]);
   
 
@@ -47,7 +45,7 @@ export const  ExchangeRateFeature : FC = () => {
           <TextField id="input-amount" label="Amount" onChange={ onAmountChange } />
           <CurrencyComponent {...currencyComponentProps} />
         </FormControl>
-         <TextField id="result-money" label="Converted" value =  {toLocaleNumberDisplay(targetAmount)}/>
+        <TextField id="result-amount" label="Converted Amount" value =  {toLocaleNumberDisplay(targetAmount)}/>
     </div>
   );
 }
