@@ -9,7 +9,7 @@ import { toLocaleNumberDisplay } from '../../utils/display';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     formControl: {
-      margin: theme.spacing(1),
+      margin: theme.spacing(2),
       minWidth: 300,
     },
   }),
@@ -45,8 +45,9 @@ export const  ExchangeRateFeature : FC = () => {
        <FormControl className={classes.formControl}>
           <TextField id="input-amount" label="Amount" onChange={ onAmountChange } />
           <CurrencyComponent {...currencyComponentProps} />
+           <TextField id="result-amount" label="Converted Amount" value =  {toLocaleNumberDisplay(targetAmount)}/>
         </FormControl>
-        <TextField id="result-amount" label="Converted Amount" value =  {toLocaleNumberDisplay(targetAmount)}/>
+       
     </div>
   );
 }
