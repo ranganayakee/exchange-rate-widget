@@ -8,7 +8,9 @@ import { defaultCurrencyCollection } from './currency.defaults.types';
 export const getCurrencies = (request = thunk) =>
     request({
         execute: (_state, service = api) => service.getAll(),
-        succeeded: (data) => getCurrenciesSuccess(toCurrencyCollection(data)),
+        succeeded: (data) => {
+            return getCurrenciesSuccess(toCurrencyCollection(data))
+        },
     });
 
 export interface CurrencyState {

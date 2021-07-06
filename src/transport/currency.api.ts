@@ -1,6 +1,6 @@
 import { get } from './api';
 
 export const getAll = () => {
-    return get(`https://open.exchangerate-api.com/v6/latest`);
+    return get(`http://localhost:4001/exchange-rates/latest`);
 };
 

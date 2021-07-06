@@ -11,7 +11,7 @@ export const parseResponse = (response: AxiosResponse<any>) => {
         return { ok: false, errors: [{ message: 'unauthorized' }] };
     if (response.status === 204) return { ok: true, data: {} };
 
-    const json = response.data;
+    const json = response.data.data;
     if (
         response.status === 200 ||
         response.status === 201 ||

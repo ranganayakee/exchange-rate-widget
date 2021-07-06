@@ -23,7 +23,8 @@ export const  ExchangeRateFeature : FC = () => {
   const [targetAmount, setTargetAmount] = useState<number>(0);
 
   const onAmountChange = (event :  React.ChangeEvent<HTMLInputElement>) => {
-    setAmount( Number(event.target.value));
+    const newAmount =  Number(event.target.value); 
+    setAmount(newAmount);
   }
 
   const onCurrencyChange = (currency? : Currency) => {
